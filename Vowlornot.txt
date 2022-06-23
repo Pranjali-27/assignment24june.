@@ -1,0 +1,87 @@
+Enter a character and check it is vowel or consonant Through switch and case.
+import java.util.*;
+class Vowelorconstant
+{
+   public static void main(String arg[])
+   {
+	
+	Scanner in=new Scanner(System.in);
+	System.out.println("Enter the letter");
+	char lt=in.next().charAt(0); 
+	
+	switch(lt)
+	{
+	   case 'a':
+
+System.out.println(" is  a Vowel");
+break;
+
+
+	   case 'e':
+         
+        System.out.println(" is  a Vowel");
+        break;
+
+
+    	   case 'i' :
+          
+
+       System.out.println(" is  a Vowel");
+       break;
+
+
+	   case 'o':
+         
+        System.out.println(" is  a Vowel");
+        break;
+
+
+
+	   case 'u' :
+           
+       System.out.println(" is  a Vowel");
+       break;
+
+
+
+
+
+	   case 'A' :
+     System.out.println(" is  a Vowel");
+     break;
+
+
+	   case 'E' :
+    System.out.println(" is  a Vowel");
+    break;
+
+	   case 'I' :
+    System.out.println(" is  a Vowel");
+    break;
+
+	   case 'O' :
+    System.out.println(" is  a Vowel");
+    break;
+
+	   case 'U' : 
+   System.out.println(" is  a Vowel");
+   break;
+
+	
+	default:
+
+System.out.println(" a Constant");
+}
+}
+}
+
+Output:
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>javac Vowelorconstant.java
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>java Vowelorconstant.java
+Enter the letter
+E
+ is  a Vowel
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>	
