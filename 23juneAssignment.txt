@@ -1,0 +1,474 @@
+(1) Any year is entered through the keyboard, write a program to
+determine whether the year is leap or not. Use the logical operators
+&& and ||.
+
+import java.util.*;
+ class LeapYear_4 
+{
+ public static void main(String[] args) 
+{
+     Scanner sc = new Scanner(System.in);     
+     System.out.println("Enter an Year::");
+      int year=sc.nextInt();  
+         
+        
+       
+        if (((year % 4 == 0) && (year % 100!= 0)) || (year%400 == 0))
+         {
+         System.out.println("year is a leap year");
+         }
+      else
+      {
+         System.out.println("year is not a leap year");
+      }
+}
+}
+
+Output:-
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>javac LeapYear_4.java
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>java LeapYear_4.java
+Enter an Year::
+2008
+year is a leap year
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>java LeapYear_4.java
+Enter an Year::
+2013
+year is not a leap year
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>
+
+
+4)If the three sides of a triangle are entered through the keyboard,
+write a program to check whether the triangle is isosceles,
+equilateral, scalene or right angled triangle.
+
+
+
+import java.util.*;
+class Triangle_threeoutoftwo
+{
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		int a,b,c;
+		System.out.println("Enter 3 sides:");
+		a=sc.nextInt();
+		b=sc.nextInt();
+		c=sc.nextInt();
+		if(a<b+c && b<a+c && c<a+b)
+		{
+			if(a==b && b==c)
+				System.out.println("Equilateral triangle");
+			else if(a==b || b==c || c==a)
+				System.out.println("Isosceles triangle");
+			else
+				System.out.println("Scalene triangle");
+}
+		
+	}
+}
+
+
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>javac Triangle_threeoutoftwo.java
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>java Triangle_threeoutoftwo.java
+Enter 3 sides:
+12
+12
+14
+Isosceles triangle
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>
+
+
+11) Write a Java program to input electricity unit charges and calculate total electricity bill according to the given condition:
+For first 50 units Rs. 0.50/unit
+For next 100 units Rs. 0.75/unit
+For next 100 units Rs. 1.20/unit
+For unit above 250 Rs. 1.50/unit
+An additional surcharge of 20% is added to the bill
+
+
+
+
+
+
+import java.util.Scanner;
+
+ class ElectricityBill1 
+{
+	private static Scanner sc;
+	public static void main(String[] args) 
+	{
+		int Units;
+		double Amount, Sur_Charge, Total_Amount;
+		sc = new Scanner(System.in);
+		
+		System.out.print(" Please Enter the Units that you Consumed  : ");
+		Units = sc.nextInt();
+  
+	  	if (Units < 50)
+	  	{
+	        Amount = Units * 0.50;
+	  		Sur_Charge = 20;  	
+	  	} 
+	  	else if (Units <= 100)
+	  	{
+	  		// For the First Fifty Units Charge = 130 (50 * 2.60)
+	  		// Next, we are removing those 50 units from total units
+	  		Amount = 130 + ((Units - 50 ) * 3.25);
+	  		Sur_Charge = 35; 	
+	  	}
+	  	else if (Units <= 200)
+	  	{
+	  		// First Fifty Units charge = 130, and 50 - 100 is 162.50 (50 * 3.25)
+	  		// Next, we are removing those 100 units from total units
+	  		Amount = 130 + 162.50 + ((Units - 100 ) * 5.26);
+	  		Sur_Charge = 45; 	
+	  	}
+	  	else
+	  	{
+	  		/* First Fifty Units = 130, 50 - 100 is 162.50, 
+	  		 and 100 - 200 is 526 (100 * 5.65)
+	  		Next, we are removing those 200 units from total units */
+		   	Amount = 130 + 162.50 + 526 + ((Units - 200 ) * 7.75); 
+		   	Sur_Charge = 55; 
+		}
+		
+		Total_Amount = Amount + Sur_Charge;
+		System.out.println("\n Electricity Bill  =  " + Total_Amount);
+	}
+
+}
+
+output:
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>javac ElectricityBill1.java
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>java ElectricityBill1.java
+ Please Enter the Units that you Consumed  : 100
+
+ Electricity Bill  =  327.5
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>
+
+
+10 Write a Java program to input basic salary of an employee and calculate its Gross salary according to following:
+Basic Salary <= 10000 : HRA = 20%, DA = 80%
+Basic Salary <= 20000 : HRA = 25%, DA = 90%
+Basic Salary > 20000 : HRA = 30%, DA = 95%
+
+
+import java.util.*;
+
+class Basicsalary_1
+ {
+  
+ 	public static void main(String[]args)
+	{
+ 
+ 		 Scanner sc=new Scanner(System.in);
+ 
+		 System.out.println("Enter Basic Salary : ");
+			int Sal=sc.nextInt();
+
+			if(Sal<=10000)
+			{
+			  double DA=(Sal*0.8);
+			  double HRA=(Sal*0.2);
+			  double GS=(DA+HRA+Sal);
+			  System.out.println("Gross Salary Is : " + GS);
+			}
+				else if(Sal<=20000)
+				{
+			 	   double DA=(Sal*0.9);
+			         double HRA=(Sal*0.25);
+			         double GS=(DA+HRA+Sal);
+			         System.out.println("Gross Salary Is : " + GS);
+			      }
+					else if(Sal>=20000)
+					{
+			 	         double DA=(Sal*0.95);
+			               double HRA=(Sal*0.30);
+			               double GS=(DA+HRA+Sal);
+			               System.out.println("Gross Salary Is : " + GS);
+			            }
+						
+							
+        }
+}
+
+
+
+output:
+
+
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>javac Basicsalary_1.java
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>java Basicsalary_1.java
+Enter Basic Salary :
+20000
+Gross Salary Is : 43000.0
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>
+
+
+
+
+Output:
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>javac Basicsalary_1.java
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>java Basicsalary_1.java
+Enter Basic Salary :
+20000
+Gross Salary Is : 43000.0
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>
+
+
+
+
+9 Write a Java program to input marks of five subjects Physics, Chemistry, Biology, Mathematics and Computer. Calculate percentage and grade according to following:
+Percentage >= 90% : Grade A
+Percentage >= 80% : Grade B
+Percentage >= 70% : Grade C
+Percentage >= 60% : Grade D
+Percentage >= 40% : Grade E
+Percentage < 40% : Grade F
+
+import java.util.*;
+class subject_percentage
+{
+public static void main(String args[])
+{
+Scanner in=new Scanner(System.in);
+int physics,chemistry,biology,maths,computer,totalnumber,score, percent;
+
+System.out.println("The obtainedmarks= "); 
+totalnumber=in.nextInt();
+System.out.println("marks of physics= ");
+physics=in.nextInt();
+System.out.println("marks of chemistry=");
+chemistry=in.nextInt();
+System.out.println( "marks of biology=");
+biology=in.nextInt();
+System.out.println("marks of maths=");
+maths=in.nextInt();
+System.out.println("marks of computer=");
+computer=in.nextInt();
+score=(physics+chemistry+biology+maths+computer);
+System.out.println("score marks=:"+score);
+percent=(score*(100/totalnumber));
+System.out.println("percentage=:"+percent);
+percent=in.nextInt();
+if(percent>=90)
+{
+System.out.println("Grade A");
+}
+else if(percent>=80)
+{
+System.out.println("Grade B");
+}
+else if(percent>=70)
+{
+System.out.println("Grade C");
+}
+else if(percent>=60)
+{
+System.out.println("Grade D");
+}
+else if(percent>=40)
+{
+System.out.println("Grade E");
+}
+if(percent<40)
+{
+System.out.println("Grade F");
+ }
+}
+}
+
+output:
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>javac subject_percentage.java
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>java subject_percentage.java
+The obtainedmarks=
+400
+marks of physics=
+80
+marks of chemistry=
+70
+marks of biology=
+80
+marks of maths=
+70
+marks of computer=
+60
+score marks=:360
+percentage=:0
+40
+Grade E
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>
+
+
+
+(6) Using conditional operators determine:
+(1) Whether the character entered through the keyboard is a
+lower case alphabet or not.
+(2) Whether a character entered through the keyboard is a special
+symbol or not.
+
+import java.util.*;
+ class operator_determine
+{
+public static void main(String []args)
+{
+Scanner in=new Scanner(System.in);
+System.out.println("Enter Alphabet");
+int Alphabet=in.next().charAt(0);
+
+if(Alphabet>=65 && Alphabet<=90)
+{
+System.out.println("Capital");
+}
+else if (Alphabet>=97 && Alphabet<=122)
+{
+System.out.println("small");
+}
+else
+{
+System.out.println("symbol");
+}
+}
+}
+Output:
+
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>javac operator_determine.java
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>java operator_determine.java
+Enter Alphabet
+Q
+Capital
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>java operator_determine.java
+Enter Alphabet
+d
+small
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>java operator_determine.java
+Enter Alphabet
+%
+symbol
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>
+
+
+(5) In boxing the weight class of a boxer is decided as per the following
+table. Write a program that receives weight as input and prints out
+the boxer’s weight class.
+Boxer Class  Weight in Pounds  
+Flyweight    < 115
+Bantamweight  115 - 121
+Featherweight  122 - 153
+Middleweight  154 – 189
+Heavyweight    >= 190
+
+
+
+
+
+
+
+import java.util.*;
+class flyweight
+{
+public static void main(String[]args)
+{
+Scanner in=new Scanner(System.in);
+System.out.println("Enter the Weight");
+int weight=in.nextInt();
+
+if(weight<115)
+{
+System.out.println("flyweight");
+}
+else if(weight>115 && weight<=121)
+{
+System.out.println("bantamweight");
+}
+else if(weight>122 && weight<=153)
+{
+System.out.println("featherweight");
+}
+else if(weight>154 && weight<=189)
+{
+System.out.println("middleweight");
+}
+else if(weight>=190)
+{
+System.out.println("heavyweight");
+}
+}
+}
+
+output:
+C:\Users\AT SYSTEMS\SkyDrive\Documents>javac flyweight.java
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>java flyweight.java
+Enter the Weight
+155
+middleweight
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>
+
+
+
+
+import java.util.*;
+class profit_loss
+{
+public static void main(String[]args)
+{
+Scanner in=new Scanner(System.in);
+System.out.println("Enter cost value");
+int co=in.nextInt();
+System.out.println("Enter selling value");
+int se=in.nextInt();
+
+if(co<se)
+{
+int prof=se-co;
+System.out.println("profit is=:" +prof);
+}
+
+else if (se>co)
+{
+int loss=se-co;
+System.out.println("loss is=:" +loss);
+}
+}
+}
+
+output:
+
+
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>javac profit_loss.java
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>java profit_loss.java
+Enter cost value
+60
+Enter selling value
+80
+profit is=:20
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>
