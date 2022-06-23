@@ -1,0 +1,92 @@
+import java.util.*;
+
+class Calculator_1
+{
+  public static void main(String[] args) {
+
+    char operator;
+    Double number1, number2, result;
+
+    
+    Scanner sc = new Scanner(System.in);
+
+    
+    System.out.println("Choose an operator: +, -, *, or /");
+    operator = sc.next().charAt(0);
+
+    
+    System.out.println("Enter first number");
+    number1 = sc.nextDouble();
+
+    System.out.println("Enter second number");
+    number2 = sc.nextDouble();
+
+    switch (operator) 
+{
+
+      
+      case '+':
+        result = number1 + number2;
+        System.out.println(number1 + " + " + number2 + " = " + result);
+        break;
+
+      
+      case '-':
+        result = number1 - number2;
+        System.out.println(number1 + " - " + number2 + " = " + result);
+        break;
+
+      
+      case '*':
+        result = number1 * number2;
+        System.out.println(number1 + " * " + number2 + " = " + result);
+        break;
+
+      
+      case '/':
+        result = number1 / number2;
+        System.out.println(number1 + " / " + number2 + " = " + result);
+        break;
+
+      default:
+        System.out.println("Invalid operator!");
+        break;
+    }
+
+    
+  }
+}
+
+
+
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>javac Calculator_format.java
+Calculator_format.java:16: error: cannot find symbol
+   operator  = input.next().charAt(0);
+               ^
+  symbol:   variable input
+  location: class Calculator_format
+Calculator_format.java:20: error: cannot find symbol
+    number1 = input.nextInt();
+              ^
+  symbol:   variable input
+  location: class Calculator_format
+Calculator_format.java:23: error: cannot find symbol
+    number2 = input.nextInt();
+              ^
+  symbol:   variable input
+  location: class Calculator_format
+3 errors
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>javac Calculator_format.java
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>java Calculator_format.java
+Choose an operator: +, -, *, or /
+-
+Enter first number
+20
+Enter second number
+12
+20 - 12 = 8
+
+C:\Users\AT SYSTEMS\SkyDrive\Documents>
