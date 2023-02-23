@@ -15,6 +15,7 @@ System.out.println(a +"");
 int c;
            while(i<=n)
            {
+            
              c=a+b;
 System.out.println(c +" ");
               a=b;
